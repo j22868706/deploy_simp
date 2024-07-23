@@ -88,7 +88,7 @@ def signup():
         signup_error_response = {"error": True, "message": "The email address is already in use!"}
         return jsonify(signup_error_response), 400
     try:
-        cursor.execute("INSERT INTO membership (memberId, memberEmail, memberPwd, memberIcon) VALUES (%s, %s, %s, %s)",
+        cursor.execute("INSERT INTO membership (memberId, memberEmail, memberPwd, C) VALUES (%s, %s, %s, %s)",
                        (signupName, signupEmail, signupPassword, singupMemberIcon))
         con.commit()
         con.close()
